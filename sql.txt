@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 CREATE TABLE `zfcglists` (
   `id` varchar(7) NOT NULL DEFAULT '',
   `mainBidMenuName` varchar(100) DEFAULT NULL,
@@ -11,20 +12,20 @@ CREATE TABLE `zfcglists` (
   `url` varchar(200) DEFAULT NULL,
   `createtime` datetime DEFAULT NULL,
   `updatatime` datetime DEFAULT NULL,
-  `ggtype` varchar(2) DEFAULT NULL COMMENT '¹«¸æ´óÀà£º[0:È«²¿¹«¸æ]  [10:²É¹º¹«¸æ] [2Í¬¹«¸æ]'',''40 [ÆäËû±êÑ¶]'',''50 [²É¹º¹«Ê¾]'',''20 [½á¹û¹«¸æ]''',
+  `ggtype` varchar(2) DEFAULT NULL COMMENT 'å…¬å‘Šå¤§ç±»ï¼š[0:å…¨éƒ¨å…¬å‘Š]  [10:é‡‡è´­å…¬å‘Š] [2åŒå…¬å‘Š]'',''40 [å…¶ä»–æ ‡è®¯]'',''50 [é‡‡è´­å…¬ç¤º]'',''20 [ç»“æœå…¬å‘Š]''',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `zfcg_deatil` (
   `id` varchar(7) NOT NULL DEFAULT '',
-  `url` varchar(200) DEFAULT NULL COMMENT 'ÏêÏ¸¹«¸æurlÁ´½Ó',
+  `url` varchar(200) DEFAULT NULL COMMENT 'è¯¦ç»†å…¬å‘Šurlé“¾æ¥',
   `fbdate` datetime DEFAULT NULL,
-  `fjbool` varchar(1) DEFAULT NULL COMMENT 'ÊÇ·ñ´æÔÚ¸½¼ş',
-  `downflag` varchar(1) DEFAULT NULL COMMENT '¸½¼şÊÇ·ñÒÑÏÂÔØ',
-  `detailtext` longtext COMMENT 'ÕıÎÄĞÅÏ¢',
-  `fjurl` varchar(200) DEFAULT NULL COMMENT '¸½¼şurlµØÖ·',
-  `createtime` datetime DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-  `updatatime` datetime DEFAULT NULL COMMENT '¸üĞÂÊ±¼ä',
+  `fjbool` varchar(1) DEFAULT NULL COMMENT 'æ˜¯å¦å­˜åœ¨é™„ä»¶',
+  `downflag` varchar(1) DEFAULT NULL COMMENT 'é™„ä»¶æ˜¯å¦å·²ä¸‹è½½',
+  `detailtext` longtext COMMENT 'æ­£æ–‡ä¿¡æ¯',
+  `fjurl` varchar(200) DEFAULT NULL COMMENT 'é™„ä»¶urlåœ°å€',
+  `createtime` datetime DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+  `updatatime` datetime DEFAULT NULL COMMENT 'æ›´æ–°æ—¶é—´',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

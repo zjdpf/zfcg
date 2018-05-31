@@ -3,7 +3,10 @@ import json
 from celery import Celery
 from db_access2 import *
 from sqlalchemy import func
-celery_app3=Celery('celery_zfcg2',broker='redis://172.17.173.196:6379/1')
+# celery_app3=Celery('celery_zfcg2',broker='redis://172.17.173.196:6379/1')
+# celery worker -A celery_zfcg2 -l info -c 20
+celery_app3=Celery('celery_zfcg2',broker='redis://127.0.0.1:6379/1')
+
 
 @celery_app3.task
 def gen(i):

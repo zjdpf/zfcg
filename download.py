@@ -6,7 +6,8 @@ from bs4 import  BeautifulSoup
 import  requests,json
 import  time
 from celery import Celery
-app3=Celery('download',broker='redis://172.17.173.196:6379/1')
+# app3=Celery('download',broker='redis://172.17.173.196:6379/1')
+app3=Celery('download',broker='redis://127.0.0.1:6379/1')
 
 @app3.task
 def zfcg(i):
