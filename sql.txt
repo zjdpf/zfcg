@@ -1,0 +1,30 @@
+CREATE TABLE `zfcglists` (
+  `id` varchar(7) NOT NULL DEFAULT '',
+  `mainBidMenuName` varchar(100) DEFAULT NULL,
+  `title` varchar(200) DEFAULT NULL,
+  `projectCode` varchar(100) DEFAULT NULL,
+  `pubDate` varchar(20) DEFAULT NULL,
+  `districtName` varchar(20) DEFAULT NULL,
+  `type` varchar(5) DEFAULT NULL,
+  `typeName` varchar(50) DEFAULT NULL,
+  `keywords` longtext,
+  `url` varchar(200) DEFAULT NULL,
+  `createtime` datetime DEFAULT NULL,
+  `updatatime` datetime DEFAULT NULL,
+  `ggtype` varchar(2) DEFAULT NULL COMMENT '公告大类：[0:全部公告]  [10:采购公告] [2同公告]'',''40 [其他标讯]'',''50 [采购公示]'',''20 [结果公告]''',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `zfcg_deatil` (
+  `id` varchar(7) NOT NULL DEFAULT '',
+  `url` varchar(200) DEFAULT NULL COMMENT '详细公告url链接',
+  `fbdate` datetime DEFAULT NULL,
+  `fjbool` varchar(1) DEFAULT NULL COMMENT '是否存在附件',
+  `downflag` varchar(1) DEFAULT NULL COMMENT '附件是否已下载',
+  `detailtext` longtext COMMENT '正文信息',
+  `fjurl` varchar(200) DEFAULT NULL COMMENT '附件url地址',
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `updatatime` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
