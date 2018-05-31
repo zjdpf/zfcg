@@ -4,7 +4,10 @@ from db_access2 import *
 from bs4 import BeautifulSoup
 import  re
 import json
+from celery import Celery
+fjcelery=Celery("fjdown2",broker="redis://127.0.0.1:6379/1")
 
+@fjcelery.task
 def gen(each):
     url = "http://manager.zjzfcg.gov.cn/cms/api/cors/getRemoteResults?noticeId=%s"%each+"&url=http%3A%2F%2Fnotice.zcy.gov.cn%2Fnew%2FnoticeDetail"
     html=getHtmltext(url)
@@ -21,6 +24,7 @@ def gen(each):
         updatatime=func.now(),
         )
     Save_zfcg_deatil(zfcg_deatil)
+
 
 def getHtmltext(url):
     try:
@@ -46,10 +50,10 @@ def getFjxx(html):
     else:
         fjurl=[fbsj," "," "]
 
+
 def gen_info():
     for each in Querey_zfcglists_id():
-        gen(each)
-    # gen('1000008')
+        gen.delay(each)
 
 if __name__ == '__main__':
     gen_info()

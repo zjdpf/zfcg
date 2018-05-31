@@ -47,6 +47,7 @@ class Zfcg_deatil(Base):
     detailtext=Column(Text) #公告详细正文信息
     fbdate=Column(DateTime(timezone=True)) #公告发布时间
     fjurl=Column(String(200)) #附件url
+    fjurlname=Column(String(100)) #附件url名称
     createtime=Column(DateTime(timezone=True), default=func.now()) #创建时间
     updatatime=Column(DateTime(timezone=True), default=func.now()) #更新时间
     def __repr__(self):
