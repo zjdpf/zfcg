@@ -37,19 +37,22 @@ def getHtmltext(url):
 
 def getFjxx(html):
     fbsj=json.loads(html)["noticePubDate"]      #获取发布时间
+    print(fbsj)
     data = json.loads(html)["noticeContent"]    #获取正文内容
     #从正文中搜索附件url
-    soup = BeautifulSoup(html, "lxml")
+    soup = BeautifulSoup(data, "lxml")
     href=soup.find_all("a",href=re.compile("aliyuncs"))
     if href:
         for link in href:
             fhref=link.get("href")
             fname=link.contents[0]
             fjurl=[fbsj,fhref,fname] #发布时间、附件url链接、附件名称
-            return  fjurl
+        return  fjurl
     else:
-        fjurl=[fbsj," "," "]
-
+        fhref=" "
+        fname=" "
+        fjurl=[fbsj,fhref,fname]
+        return fjurl
 
 def gen_info():
     for each in Querey_zfcglists_id():
