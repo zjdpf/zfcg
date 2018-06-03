@@ -1,11 +1,11 @@
 # -*- coding:utf-8 -*-
 import json
-from celery import Celery
+# from celery import Celery
 from db_access2 import *
 from sqlalchemy import func
-celery_app3=Celery('celery_zfcg',broker='redis://172.17.173.196:6379/1')
+# celery_app3=Celery('celery_zfcg',broker='redis://172.17.173.196:6379/1')
 
-@celery_app3.task
+# @celery_app3.task
 def gen(i):
     pathname=r'C:/zfcg1/%djson'%i
     with open(pathname,'r',encoding='utf-8') as f:
@@ -29,8 +29,9 @@ def gen(i):
     print("The Json of Number %s is dealing over ！！！" %i)
 
 def gen_info():
-    for i in range(1,100):
-        gen.delay(i)
+    for i in range(1,6):
+        # gen.delay(i)
+        gen(i)
 
 if __name__ == '__main__':
     gen_info()

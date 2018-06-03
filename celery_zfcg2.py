@@ -35,7 +35,7 @@ def gen(i):
         print("The Json of Number %s is dealing over ！！！" %i)
 
 def gen_info():
-    for i in range(1,101):
+    for i in range(1,7): #最大只有100
         gen.delay(i)
 
 if __name__ == '__main__':

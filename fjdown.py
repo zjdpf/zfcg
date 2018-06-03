@@ -51,9 +51,9 @@ def getFjxx(html):
         return fjurl
 
 def gen_info():
-    # for each in Querey_zfcglists_id():
-    #     gen(each)
-    gen('294712')
+    for each in Querey_zfcglists_id():
+        gen(each)
+    # gen('294712')
 
 if __name__ == '__main__':
     gen_info()

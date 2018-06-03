@@ -25,7 +25,8 @@ def zfcg(i):
 
 def craw():
     start = time.time()
-    for i in range(1,101):
+    # for i in range(1,101):
+    for i in range(1,7):
         zfcg.delay(i)
     print("it tooks", time.time() - start, "seconds")
 

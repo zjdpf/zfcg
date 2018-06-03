@@ -47,4 +47,10 @@ def Save_zfcg_deatil(zfcg_deatil):
     except Exception as e:
         print(str(e))
 
+def Query_zfcg_deatil():
+    try:
+        result=session.query(Zfcg_deatil).filter_by(fjbool='0')
+        pass
+    except:
+        pass
 
